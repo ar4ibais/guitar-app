@@ -20,5 +20,6 @@ fetch('server/catalog.json')
         }, 1000);
     })
     .catch(err => {
-        console.log(err);
+        spinnerPage.handleClear();
+        errorPage.render();
     });
