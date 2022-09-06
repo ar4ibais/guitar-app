@@ -1,8 +1,13 @@
 class Header {
+
+    handlerOpenShoppingPage() {
+        shoppingPage.render();
+        document.documentElement.style.overflow = 'hidden';
+    }
     render(count) {
         const html = `
             <div class="header__container">
-                <div class="header__counter"> 🔥 ${count - 1}</div>
+                <div class="header__counter" onclick="headerPage.handlerOpenShoppingPage();"> 🔥 ${count}</div>
             </div>
         `;
 
@@ -12,6 +17,3 @@ class Header {
 
 const headerPage = new Header();
 
-const productsStore = localStorageUtil.getProducts();
-
-headerPage.render(productsStore.length);
